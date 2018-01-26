@@ -1,8 +1,11 @@
+
+//this all comes from https://github.com/geoffmiller/simple-react-webpack-boilerplate
+
 const path = require('path');
 const fs  = require('fs');
 
 const lessToJs = require('less-vars-to-js');
-const themeVariables = lessToJs(fs.readFileSync(path.join(__dirname, './scripts/ant-theme-vars.less'), 'utf8'));
+const themeVariables = lessToJs(fs.readFileSync(path.join(__dirname, './scripts/theme/ant-theme-vars.less'), 'utf8'));
 
 // lessToJs does not support @icon-url: "some-string", so we are manually adding it to the produced themeVariables js object here
 themeVariables["@icon-url"] = "'http://localhost:8080/fonts/iconfont'";
