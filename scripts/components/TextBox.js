@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { textCHANGE } from '../Redux/actions'
+import '../theme/main.less'
 
 
 class TextBox extends Component {
@@ -31,7 +32,9 @@ class TextBox extends Component {
   render() {
     return (
       <div>
-        Current text value: {this.state.reduxtext}
+        <div className="contentStyles">
+          Current text value: {this.state.reduxtext}
+        </div>
         <form onClick={()=>{this.setState({localtext: ''})}}>
           <textarea value={this.state.localtext} onChange={(e)=>{
               this.setState({
